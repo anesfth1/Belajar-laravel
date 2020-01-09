@@ -25,6 +25,23 @@ Route::get('meser/{makan}/{minum}/{bayar}', function($mkn,$min,$byr) {
     return 'Makanan : '.$mkn. '<br>Minuman : '.$min. '<br>Bayar : '.$byr;
 });
 
+Route::get('halo/{nama?}', function($nama='anes'){
+    return 'Hallo Nama Saya '.$nama;
+});
+
+//Tugas awal
+Route::get('meuli/{makan?}/{minum?}/{bayar?}', function($mkn=null,$min=null,$byr=null) {
+    if (($mkn)) {
+         echo "Anda Meser : ".$mkn;
+    }if (($min)) {
+        echo " & " .$min;
+    }if (($byr)) {
+        echo "<br> Total Harga : ".$byr;
+    }if (!$mkn && !$min && !$byr) {
+         echo "Anda Tidak Meser";
+    }
+});
+
 // Route::get('names', function() {
 //     return view('names');
 // });
