@@ -1,7 +1,5 @@
 <?php
 
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -41,6 +39,56 @@ Route::get('meuli/{makan?}/{minum?}/{bayar?}', function($mkn=null,$min=null,$byr
          echo "Anda Tidak Meser";
     }
 });
+
+// // Memunculkan semua data
+// Route::get('/testmodel', function() {
+//    $query =  App\Post::all();
+//    return $query;
+// });
+
+Route::get('/penggajian', function() {
+   $query =  App\Gaji::all();
+   return $query;
+});
+
+// // Memunculkan data sesuai data yang ditujukan
+// Route::get('/testmodel', function() {
+//    $query =  App\Post::find(1);
+//    return $query;
+// });
+
+// // Menmunculkan data berdasarkan title
+// Route::get('/testmodel', function() {
+//    $query =  App\Post::where('title','like','%cepat nikah%')->get();
+//    return $query;
+// });
+
+// // Mengubah Record
+// Route::get('/testmodel', function() {
+//    $query =  App\Post::find(1);
+//    $query->title = "Ciri keluarga sakinah";
+//    $query->save();
+//    return $query;
+// });
+
+// // Menghapus record (menghapus semua function)
+// Route::get('/testmodel', function() {
+//    $query =  App\Post::find(1);
+//    $query->delete();
+// //    check delete di database
+// });
+
+// // Menambahkan record
+// Route::get('/testmodel', function() {
+//    $query =  new App\Post;
+//    $query->title = "1 amalan wajah bersinar";
+//    $query->content = "shalat malam";
+//    $query->save();
+//    return $query;
+// });
+
+
+
 
 // Route::get('names', function() {
 //     return view('names');
