@@ -40,16 +40,49 @@ Route::get('meuli/{makan?}/{minum?}/{bayar?}', function($mkn=null,$min=null,$byr
     }
 });
 
-// // Memunculkan semua data
-// Route::get('/testmodel', function() {
-//    $query =  App\Post::all();
-//    return $query;
-// });
+// Memunculkan semua data
+Route::get('/model', function() {
+   $query =  App\Post::all();
+   return $query;
+});
 
 Route::get('/penggajian', function() {
    $query =  App\Gaji::all();
    return $query;
 });
+
+Route::get('penggajian/{id}',function($id) {
+   $query = App\Gaji::find($id);
+   return $query;
+});
+
+// // Menambahkan data
+// Route::get('/penggajian', function() {
+//    $query =  new App\Gaji;
+//    $query->id = "2";
+//    $query->nama = "Indah Mambo";
+//    $query->jabatan = "Seketaris";
+//    $query->jk = "Perempuan";
+//    $query->alamat = "Bojong Honey";
+//    $query->agama = "Islam";
+//    $query->totalgaji = "Rp.5.500.000";
+//    $query->save();
+//    return $query;
+// });
+
+// // Memunculkan data berdasarkan nama
+// Route::get('penggajian',function() {
+//     $query = App\Gaji::where('nama','=','Agus')->get();
+//     return $query;
+// });
+
+// // Memunculkan semua data berdasarkan pilihan yang ditujukan
+// Route::get('penggajian',function() {
+//     $query = App\Gaji::select('id','nama','totalgaji')
+//     ->where('totalgaji','=','Rp.5.000.000')
+//     ->get();
+//     return $query;
+// });
 
 // // Memunculkan data sesuai data yang ditujukan
 // Route::get('/testmodel', function() {
