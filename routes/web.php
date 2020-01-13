@@ -1,5 +1,4 @@
 <?php
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -55,6 +54,16 @@ Route::get('penggajian/{id}',function($id) {
    $query = App\Gaji::find($id);
    return $query;
 });
+
+Route::get('hi','SekolahController@world');
+Route::get('hi2','SekolahController@jungle');
+Route::get('hi3','SekolahController@school');
+Route::get('hi4','SekolahController@zoo');
+Route::get('hi5','SekolahController@garage');
+Route::get('hi6/{warna}','SekolahController@jeniskucing');
+Route::get('hi7/{warna?}','SekolahController@kucing');
+
+Route::get('hi8/(makan?}','SekolahController@makans');
 
 // // Menambahkan data
 // Route::get('/penggajian', function() {
