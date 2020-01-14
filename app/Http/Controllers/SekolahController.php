@@ -31,11 +31,21 @@ class Sekolahcontroller extends Controller
             return "Warna kucing kamu: ".$warna;
         }
     }
-     public function makans($makan=null) {
-        if ((!$makan)) {
-            return "Anda belum memesan apapun!";
-        }else {
-            return "Anda memesan ".$makan;
+     public function jual($makan = null, $harga = null){
+        if (isset($makan)) {
+            echo "Anda membeli ".$makan;
+        } if (isset($harga)) {
+            if ($harga >= 15000) {
+                echo " dengan ukuran Jumbo";
+            } elseif ($harga < 15000 && $harga >= 7500) {
+                echo " dengan ukuran Medium";
+            } elseif ($harga < 7500 && $harga >= 7500) {
+                echo " dengan ukuran Small";
+            } else {
+                echo ", Maaf anda salah memasukan angka";
+            }
+        } if(!$makan){
+            echo "Anda belum memesan";
         }
     }
 }

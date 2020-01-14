@@ -63,7 +63,18 @@ Route::get('hi5','SekolahController@garage');
 Route::get('hi6/{warna}','SekolahController@jeniskucing');
 Route::get('hi7/{warna?}','SekolahController@kucing');
 
-Route::get('hi8/(makan?}','SekolahController@makans');
+Route::get('beli/{makan?}/{harga?}', 'SekolahController@jual');
+
+
+Route::get('book','BookController@index');
+Route::get('book-create/{jdl}','BookController@create');
+Route::get('book/{id}','BookController@show');
+Route::get('book-edit/{id}/{jdl}','BookController@edit');
+Route::get('book-delete/{id}','BookController@delete');
+Route::get('bookss/{jdl}','BookController@creates');
+
+Route::get('buku/{id}','BookController@tampilkan');
+Route::get('buku2/{id}','BookController@tampilkan2');
 
 // // Menambahkan data
 // Route::get('/penggajian', function() {
