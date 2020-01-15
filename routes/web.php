@@ -65,7 +65,7 @@ Route::get('hi7/{warna?}','SekolahController@kucing');
 
 Route::get('beli/{makan?}/{harga?}', 'SekolahController@jual');
 
-
+// buku
 Route::get('book','BookController@index');
 Route::get('book-create/{jdl}','BookController@create');
 Route::get('book/{id}','BookController@show');
@@ -75,6 +75,14 @@ Route::get('bookss/{jdl}','BookController@creates');
 
 Route::get('buku/{id}','BookController@tampilkan');
 Route::get('buku2/{id}','BookController@tampilkan2');
+// Artikel
+// Route::get('artikel','ArtikelController@index');
+// Route::get('artikel/create','ArtikelController@create');
+// Route::get('artikel/{id}','ArtikelController@show');
+// Route::get('artikel/{id}/edit','ArtikelController@edit');
+// Route::delete('artikel/{id}','ArtikelController@destroy');
+// RESOURCE
+Route::resource('artikel','ArtikelController');
 
 // // Menambahkan data
 // Route::get('/penggajian', function() {
