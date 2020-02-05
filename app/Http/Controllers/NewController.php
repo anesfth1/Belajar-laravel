@@ -1,19 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Book;
 use App\Barang;
 use Illuminate\Http\Request;
 
-class BarangController extends Controller
+class NewController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+     public function index() {
+        $book = \App\Book::all();
+        return view('book.index', compact('book'));
+    }
+    public function index2() {
         $barang = Barang::all()->take(5);
         return view('barang.index', compact('barang'));
     }
@@ -42,22 +45,21 @@ class BarangController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\barang  $barang
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $barang = Barang::findOrFail($id);
-        return view('barang.show', compact('barang'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\barang  $barang
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(barang $barang)
+    public function edit($id)
     {
         //
     }
@@ -66,10 +68,10 @@ class BarangController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\barang  $barang
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, barang $barang)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -77,10 +79,10 @@ class BarangController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\barang  $barang
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(barang $barang)
+    public function destroy($id)
     {
         //
     }

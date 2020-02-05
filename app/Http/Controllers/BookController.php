@@ -10,7 +10,7 @@ class BookController extends Controller
 {
     public function index() {
         $book = \App\Book::all();
-        return $book;
+        return view('book.index', compact('book'));
     }
     public function create($jdl) {
         $book = new Book();
@@ -25,8 +25,8 @@ class BookController extends Controller
         return $book;
     }
     public function show() {
-        $book = Book::find($id);
-        return $book;
+        $book = Book::findOrFail($id);
+        return view('$book.show', compact('book'));
     }
     public function edit($id,$jdl) {
         $book = Book::find($id);
