@@ -187,6 +187,4 @@ Route::get('about', function(){
 Route::get('contact', function(){
     return view('contact');
 });
-Route::get('buku', function(){
-    return view('buku');
-});
+Route::get('a','NewController@index');

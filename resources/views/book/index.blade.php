@@ -7,6 +7,8 @@
     <title>List Book</title>
 </head>
 <body>
+    @extends('layouts.master')
+@section('konten')
     <center>List Book</center>
     <table border='1'>
        <thead>
@@ -28,5 +30,6 @@
            @endforeach
        </tbody>
     </table>
+    @endsection
 </body>
 </html>

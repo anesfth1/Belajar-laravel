@@ -13,12 +13,7 @@ class NewController extends Controller
      * @return \Illuminate\Http\Response
      */
      public function index() {
-        $book = \App\Book::all();
-        return view('book.index', compact('book'));
-    }
-    public function index2() {
-        $barang = Barang::all()->take(5);
-        return view('barang.index', compact('barang'));
+       return view('layouts.master', compact('a'));
     }
 
     /**

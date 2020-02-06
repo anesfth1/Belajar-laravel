@@ -7,6 +7,8 @@
     <title>List Book</title>
 </head>
 <body>
+    @extends('layouts.master')
+    @section('konten')
     <center>List Barang</center>
     <table border='1'>
        <thead>
@@ -28,7 +30,9 @@
              <td><a href="/barang2/{{ $data->id }}">Show</a></td>
            </tr>
            @endforeach
+
        </tbody>
     </table>
+       @endsection
 </body>
 </html>

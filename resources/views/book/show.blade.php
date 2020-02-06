@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    @extends('layouts.master')
+@section('konten')
     <fieldset>
         <legend>Show Data</legend>
         Title : <b>{{ $book->title }}</b><br>
@@ -20,5 +22,6 @@
                  @endif
         Data : {{ $book->date }}
     </fieldset>
+    @endsection
 </body>
 </html>

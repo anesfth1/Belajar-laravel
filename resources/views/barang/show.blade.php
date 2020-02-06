@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    @extends('layouts.master')
+@section('konten')
     <fieldset>
         <legend>Show Data</legend>
         Id : <b>{{ $barang->id }}</b><br>
@@ -15,5 +17,6 @@
         harga : <b>{{ $barang->harga }}</b><br>
         foto : <img src="{{$barang->foto}}" alt=""><br>
     </fieldset>
+    @endsection
 </body>
 </html>
